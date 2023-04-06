@@ -1,0 +1,26 @@
+{% extends "pages/base.html" %}{% load static %}
+
+{% block content %}
+<head>
+    <style>
+        .courseNav>.active{
+            background-color: green;
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+
+<!---------------------- Chapter Cards ------------------->
+<div class="container-fluid w-80" style="min-height: 800px;">
+    <div class="row my-5 justify-content-start align-items-center">
+        {% for content in content %}
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-2 mb-4">
+            <div class="card py-3 px-2 bg-success text-white">
+                <a href="{% url 'details' content.id %}" class="text-decoration-none text-white fw-bold" style="font-size: 1.1em;">{{ forloop.counter }}. {{ content.chTitle }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <img src="{% static 'images/giphy.webp' %}" class="img-fluid mx-auto d-block" alt="CouseCode" style="width: 90%; max-height: 600px;">
+</div>
+{% endblock content %}

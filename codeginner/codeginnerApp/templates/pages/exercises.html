@@ -1,0 +1,276 @@
+{% extends "pages/base.html" %}{% load static %}
+
+{% block content %}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    var count = 0;
+    function myfunction(){
+        count++;
+    }
+    function alertfun(){
+        if (count < 5){
+            swal({
+            title: "Can Improve!",
+            text: "You Scored "+ count +" out of 10",
+            icon: "warning",
+            });
+        }
+        else{
+            swal({
+            title: "Good job!",
+            text: "You Scored "+ count +" out of 10",
+            icon: "success",
+            });
+        }
+    } 
+</script>
+
+<div class="container">
+    <div class="container text-center">
+        <h1>Python Exercises</h1>
+    </div>
+    <div class="card py-3 bg-light mb-3">
+        <div class="container">
+            <form action="#" method="post" name="exercise">
+                {% csrf_token %}
+                <!-- Question 1 -->
+                <h3>Q. Choose correct option to print "Hello World!" :</h3>
+                <div class="radio-inputs ms-4 mb-4">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise1" id="q1c1">
+                        <label class="form-check-label" for="q1c1">
+                            print ("Hello World!");
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise1" onclick="myfunction()" id="q1c2">
+                        <label class="form-check-label" for="q1c2">
+                            print "Hello World!"
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise1" id="q1c3">
+                        <label class="form-check-label" for="q1c3">
+                            echo "Hello World!"
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 2 -->
+                <h3>Q. How do you insert comments in Python code ?</h3>
+                <div class="radio-inputs ms-4 mb-4">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise2" onclick="myfunction()" id="q2c1">
+                        <label class="form-check-label" for="q2c1">
+                            #This is a comment.
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise2" id="q2c2">
+                        <label class="form-check-label" for="q2c2">
+                            //This is a comment.
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise2" id="q2c3">
+                        <label class="form-check-label" for="q2c3">
+                            /*This is a comment.*/
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <h3>Q. Which one is not a Legal variable name :</h3>
+                <div class="radio-inputs ms-4 mb-4">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise3" id="q3c1">
+                        <label class="form-check-label" for="q3c1">
+                            my_var
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise3" onclick="myfunction()" id="q3c2">
+                        <label class="form-check-label" for="q3c2">
+                            _myvar
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise3" id="q3c3">
+                        <label class="form-check-label" for="q3c3">
+                            Myvar
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <h3>Q. How do you create a variable with numeric value 5 ?</h3>
+                <div class="radio-inputs ms-4 mb-4">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise4" id="q4c1">
+                        <label class="form-check-label" for="q4c1">
+                            x = 5
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise4" id="q4c2">
+                        <label class="form-check-label" for="q4c2">
+                            x = int(5)
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise4" onclick="myfunction()" id="q4c3">
+                        <label class="form-check-label" for="q4c3">
+                            Both the answers are correct.
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <h3>Q. What is the file extension used for saving python files ?</h3>
+                <div class="radio-inputs ms-4 mb-4">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise5" onclick="myfunction()" id="q5c1">
+                        <label class="form-check-label" for="q5c1">
+                            .py
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise5" id="q5c2">
+                        <label class="form-check-label" for="q5c2">
+                            .pth
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise5" id="q5c3">
+                        <label class="form-check-label" for="q5c3">
+                            .pyt
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 6 -->
+                <h3>Q. What is the syntax to output the type of a variable ?</h3>
+                <div class="radio-inputs ms-4 mb-4">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise6" id="q6c1">
+                        <label class="form-check-label" for="q6c1">
+                            print(typeof(x))
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise6" id="q6c2">
+                        <label class="form-check-label" for="q6c2">
+                            print(typeOf(x))
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise6" onclick="myfunction()" id="q6c3">
+                        <label class="form-check-label" for="q6c3">
+                            print(type(x))
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 7 -->
+                <h3>Q. What is the correct way to create a Function in Python ?</h3>
+                <div class="radio-inputs ms-4 mb-4">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise7" onclick="myfunction()" id="q7c1">
+                        <label class="form-check-label" for="q7c1">
+                            def myfunction():
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise7" id="q7c2">
+                        <label class="form-check-label" for="q7c2">
+                            function myfunction():
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise7" id="q7c3">
+                        <label class="form-check-label" for="q7c3">
+                            create myfunction():
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 8 -->
+                <h3>Q. What is a correct syntax to return the first character in a string ?</h3>
+                <div class="radio-inputs ms-4 mb-4">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise8" id="q8c1">
+                        <label class="form-check-label" for="q8c1">
+                            x = "Hello".sub(0,1)
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise8" onclick="myfunction()" id="q8c2">
+                        <label class="form-check-label" for="q8c2">
+                            x = "Hello"[0]
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise8" id="q8c3">
+                        <label class="form-check-label" for="q8c3">
+                            x = sub("Hello",0,1)
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 9 -->
+                <h3>Q. Which operator can be used to compare two values ?</h3>
+                <div class="radio-inputs ms-4 mb-4">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise9" id="q9c1">
+                        <label class="form-check-label" for="q9c1">
+                            &gt;&lt;
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise9" id="q9c2">
+                        <label class="form-check-label" for="q9c2">
+                            =
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise9" onclick="myfunction()" id="q9c3">
+                        <label class="form-check-label" for="q9c3">
+                            ==
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Question 10 -->
+                <h3>Q. Which collection is ordered, changeable, and allows duplicate members ?</h3>
+                <div class="radio-inputs ms-4 mb-4">
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise10" id="q10c1">
+                        <label class="form-check-label" for="q10c1">
+                            SET
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise10" onclick="myfunction()" id="q10c2">
+                        <label class="form-check-label" for="q10c2">
+                            LIST
+                        </label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="exercise10" id="q10c3">
+                        <label class="form-check-label" for="q10c3">
+                            TUPLE
+                        </label>
+                    </div>
+                </div>
+
+
+                <!-- Submit -->
+                <div class="container text-center">
+                    <input type="button" class="btn btn-success rounded-pill w-25 fw-bold" onclick="alertfun()" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

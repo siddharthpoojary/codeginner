@@ -1,0 +1,171 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+}
+.active {
+    font-weight: 500;
+}
+.cancel_button{
+    display:inline-block; 
+    position:absolute; 
+    right:10px; 
+    top:10px;
+    width:50px; 
+}
+/* ----------- CKEDITOR ------------------ */
+.ck-editor__editable{
+    height: 500px !important;
+}
+/* ----------- User-Account --------------- */
+.progress .progress-bar{
+    animation: animate-positive 2s;
+}
+@-webkit-keyframes animate-positive{
+    0%{ width: 0; }
+}
+@keyframes animate-positive {
+    0%{ width: 0; }
+}
+/* ------------- Navbar ------------------- */
+.navbar-nav a{
+    font-size: 20px;
+}
+nav button{
+    font-size: 1.1rem !important;
+}
+#userdropdown{
+    font-size: 20px !important;
+}
+.userdropdown_menu{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+/* -------------- Login ------------------- */
+#login{
+    display: none;
+    position: absolute;
+    z-index: 99;
+    margin: 0 auto;
+    top: 30%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.text-decoration-none{
+    text-decoration: none;
+}
+.fw-500{
+    font-weight: 500;
+}
+#forgot-pass:hover{
+    color: #dc3545 !important;
+}
+.Register:hover{
+    color: #0d6efd !important;
+}
+/* --------------- SignUp ------------------ */
+#signup{
+    display: none;
+    position: absolute;
+    z-index: 99;
+    margin: 0 auto;
+    top: 20%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+/* ------------ Content Creation ------------- */
+#course_content{
+    display: none;
+    position: absolute;
+    z-index: 99;
+    margin: 0 auto;
+    top: 10%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+/* ------------- Image with text --------------- */
+.thumb_image{
+    position: relative;
+    color: #fffaed;
+}
+.left-text{
+    position: absolute;
+    top: 30%;
+    left: 20px;
+}
+/* ---------------- Our Team ---------------- */
+.dev{
+    width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+}
+.role {
+    color: #7a7a7a;
+}
+.card h2{
+    font-size: 1rem;
+}
+.card h3{
+    font-size: 1.5rem;
+}
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-inline-item .fab {
+    font-size: 1.8rem;
+    color: darkgray;
+    transition: transform .5s;
+}
+
+.list-inline-item .fab:hover {
+    color: black;
+    transform: scale(1.5);
+}
+/* ----------------- Footer ------------- */
+.footer-icons .fab{
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: darkgray;
+    transition: transform .5s;
+}
+.footer-icons .fa-facebook{
+    color: #4267B2;
+}
+.footer-icons .fa-twitter{
+    color: #1DA1F2;
+}
+.footer-icons .fa-google{
+    color: #DB4437;
+}
+.footer-icons .fa-linkedin{
+    color:  #0A66C2;
+}
+.footer-icons .fa-instagram{
+    color:  #E1306C;
+}
+.footer-icons .fab:hover{
+    transform: scale(1.5);
+}
+footer>ul>li{
+    text-decoration: none;
+}
+.footer-link a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+}
+#contactUs{
+    color: #1DA1F2;
+}
+#contactUs:hover{
+    color: #0d6efd;
+}

@@ -1,0 +1,87 @@
+{% extends "pages/base.html" %}{% load static %}
+
+{% block content %}
+<body onload = scrolltop()>
+
+    <div class="header">
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <h1 style="font-weight: bold; font-size: 2.5rem;"><i class="fa-brands fa-python me-1"></i>Python</h1>
+    </div>
+    
+    <div class="container p-0">
+        <div class="container ms-0 mb-5 p-0">
+            <h2><b>{{ obj.chName }}</b></h2><br>
+            <p style="font-size: 1.2em; font-weight: 500;">{{ obj.chTheory|safe }}
+        </div>
+
+        <div class="container-fluid w-75 mb-5 p-0">
+            <video width="100%" height="100%" controls style="border: 2px solid #000000;">
+                <source src="{{ obj.chVideo.url }}" type="video/mp4">
+                Your browser does not support HTML videos.
+            </video>
+        </div>
+
+        <div class="card mb-5">
+            <div class="card-body bg-light pb-0"><h3>Python Example :</h3></div>
+            <div class="card-body bg-light">
+                <div class="card" style="border-left: 5px solid green;">
+                    <iframe src="{{ obj.chExample|safe }}" width="100%" height="250" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="card-body bg-light pt-0">
+                <a class="btn btn-success rounded-pill px-5" style="font-weight: bold;" target="_blank" href="{{ obj.chExample }}">Try it Yourself</a>
+            </div>
+        </div>
+        <div class="container d-flex justify-content-center p-0 mb-5">
+            <a class="btn btn-primary px-5 me-5" style="width: 200px;" href="{% url 'previousPage' obj.id|add:'-1' %}"><b>Previous</b></a>
+            <a class="btn btn-primary px-5" style="width: 200px;" href="{% url 'nextPage' obj.id|add:'1' %}"><b>Next</b></a>
+        </div>
+
+
+        <!-- Progress Bar -->
+        <style>
+            .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            }
+
+            .progress-container {
+            background-color: rgba(150, 150, 150, 0.6);
+            height: 5px;
+            width: 100%;
+            }
+
+            .progress-bar {
+            background-color: #2196f3;
+            height: 5px;
+            width: 0%;
+            }
+
+            .content {
+            padding: 2em;
+            }
+        </style>
+
+        <script>
+            function progressBarScroll() {
+                let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
+                height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
+                scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+            }
+
+            window.onscroll = function () {
+            progressBarScroll();
+            };
+        </script>
+        
+    </div>
+</body>
+{% endblock content %}
